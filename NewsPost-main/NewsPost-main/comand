@@ -1,0 +1,79 @@
+ from news.models import*
+>>> user_1 = User.objects.create_user('Becon Beg')
+>>> user_2 = User.objects.create_user('Auster Hill')
+>>> user_11.save()
+>>> user_12.save() 
+
+>>> author_2 = Author.objects.create(user = user_1)
+>>>author_2.save()
+>>> author_1 = Author.objects.create(user = user_2) 
+>>> author_1.save() 
+
+>>> category_1 = Category.objects.create(name = "sport") 
+>>> category_2 = Category.objects.create(name = "Мировые новости") 
+>>> category_3 = Category.objects.create(name = "местные новости") 
+>>> category_4 = Category.objects.create(name = "Новости экономики") 
+>>> category_5 = Category.objects.create(name = "новости науки")
+
+
+>>> category_1 = Category.objects.get(id=1) 
+>>> category_2 = Category.objects.get(id=2) 
+>>> category_3 = Category.objects.get(id=3) 
+>>> category_4 = Category.objects.get(id=4) 
+>>> category_5 = Category.objects.get(id=5) 
+
+
+>>> news_1 = Post.objects.create(post_tip ='news', header = "Мир в Огне", contents ="Мы все там будем!!", author = Author(1))  
+>>> news_1.save()
+>>> post_1 = Post.objects.create(header = "rgegrtg", contents ="jionrngiuergergnergnerngnerg", author = Author(2))
+>>> post_2 = Post.objects.create(post_tip =' states', header = "Стихи", contents ="Не ходите дети в Африку гулять!!", author 
+= Author(2))
+>>> post_1.save()
+
+ post_1 = Post.objects.get(id=1)
+>>> post_2 = Post.objects.get(id=2) 
+>>> news_1 = Post.objects.get(id=3) 
+
+>>> post_1.category.add(category_1)         
+>>> post_1.category.add(category_3) 
+>>> post_2.category.add(category_3) 
+>>> news_1.category.add(category_4) 
+
+
+comment_1 = Comment.objects.create(text_comment = 'jeriuferu0hf0qhf', user = User(1)) 
+comment_2 = Comment.objects.create(text_comment = 'jeriuferu0hf0qhf', user = User(2)) 
+>>> comment_1.save()
+>>> comment_2.save() 
+
+
+>>> comment_1 = Comment.objects.get(id=1)
+>>> comment_2 = Comment.objects.get(id=2) 
+>>> comment_3 = Comment.objects.get(id=3) 
+>>> comment_4 = Comment.objects.get(id=4) 
+>>> comment_5 = Comment.objects.get(id=5) 
+>>> comment_1.like()
+>>> comment_1.like()
+>>> comment_1.like()
+>>> comment_1.dislike() 
+>>> comment_2.like()    
+>>> comment_3.like() 
+>>> comment_3.like()
+>>> comment_3.like()
+>>> comment_4.like() 
+>>> comment_4.like()
+>>> comment_4.like()
+>>> comment_4.like()
+>>> comment_4.like()
+>>> comment_4.dislike()
+>>> post_1.likes()                  
+>>> post_1.likes()
+>>> post_2.likes() 
+>>> post_2.likes()
+>>> post_2.likes()
+>>> post_2.likes()
+>>> post_1.likes() 
+>>> post_1.dislikes()
+>>> news_1.dislikes() 
+>>> news_1.dislikes()
+>>> news_1.dislikes()
+

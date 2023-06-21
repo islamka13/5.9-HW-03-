@@ -1,0 +1,30 @@
+{% extends 'flatpages/default.html' %}
+
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>категории статей</title>
+</head>
+    <body>
+            {% block title %}
+            <h1>Категории</h1>
+            {% endblock title %}
+
+            {% block content %}
+
+                 <h1>Категории статей</h1>
+                        {% if category %}
+                             <table>
+                                <tr>
+                                   <td><h6> местные новости    </h6></td>
+
+                                    <td><h6>   мировые новости   </h6></td>
+
+                                   <td><h6>   новости науки   </h6></td>
+
+                                    <td><h6> новости экономики </h6></td>
+                                </tr>
+                             </table>
+            {% endblock content %}
+    </body>
+</html>
